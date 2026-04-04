@@ -19,3 +19,6 @@ To initialize and populate the entire Data Warehouse, follow the execution order
 7. **Finalize Gold Schema:**
    ```sql
    CALL gold.sp_load_gold();
+8. **Explore my analysis!**
+   - [1_squad_capital_efficiency_analysis](./1_squad_capital_efficiency)
+   - 
