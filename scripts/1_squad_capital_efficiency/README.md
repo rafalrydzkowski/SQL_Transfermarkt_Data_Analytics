@@ -2,15 +2,24 @@
 
 ## Project Overview
 
-**Analysis Title**:  
-**Database**: `transfermarkt`
-**Schema**: `gold.`
+**Analysis Title**: Squad Capital Efficiency (SCE) - Season 2025  
+**Database**: `PostgreSQL 16+`  
+**Schema**: `gold.`  
+**Target Audience**: Club Sporting Directors & Financial Analysts  
 
 ## Objectives
 
-1. **Business Analysis**: Investigating the capital efficiency for each club in current season (2025)
+1.  **Business Analysis**: Evaluate the **Capital Efficiency (ROI)** of football clubs for the 2025 season.
+2.  **Financial KPI**: Identify "Moneyball" overperformers by calculating the **Cost per Point** (Market Value in M€ / Total League Points).
 
 ## Analysis Structure
+
+### 1. Methodology
+We join player-level valuations with match-day performance metrics. To ensure accuracy, we don't just take the "latest" valuation; we use a window function to find the valuation record closest to the player's first appearance in the 2025 season for that specific club to avoid market volatility bias.
+
+### 2. SQL Implementation
+
+The following production-grade query identifies which clubs are most efficient at converting market value into league points.
 
 ### 1. 
 
