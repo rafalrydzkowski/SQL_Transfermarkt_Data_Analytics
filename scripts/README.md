@@ -21,4 +21,7 @@ To initialize and populate the entire Data Warehouse, follow the execution order
    CALL gold.sp_load_gold();
 8. **Explore my analysis!**
    - [1_squad_capital_efficiency_analysis](./1_squad_capital_efficiency)
-   - 
+   - [2_stadium_fill_rate_analysis](./2_stadium_fill_rate_analysis)
+   - [3_market_outliers_analysis](./3_market_outliers_analysis)
+   - [4_home_advantage_analysis](./4_home_advantage_analysis)
+   - [5_new_manager_bounce_analysis](./5_new_manager_bounce_analysis)
