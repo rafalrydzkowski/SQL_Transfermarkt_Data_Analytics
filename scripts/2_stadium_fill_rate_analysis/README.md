@@ -60,14 +60,13 @@ ORDER BY attendance_quintile ASC;
   
 **Findings:** 
 
- | attendance_quintile_bucket | win_probability_pct | avg_points_per_game | 
+| attendance_quintile_bucket | win_probability_pct | avg_points_per_game | 
 | :--- | :--- | :--- |
-
-| 1 | 37.35 | 1.36 | 
-| 2 | 44.76 | 1.59 | 
-| 3 | 47.79 | 1.69 | 
-| 4 | 48.04 | 1.70 | 
-| 5 | 47.40 | 1.68 | 
+| **1** | 37.35 | 1.36 | 
+| **2** | 44.76 | 1.59 | 
+| **3** | 47.79 | 1.69 | 
+| **4** | 48.04 | 1.70 | 
+| **5** | 47.40 | 1.68 | 
 
 
 ---
