@@ -15,14 +15,12 @@
 
 ---
 
-## Analysis Structure
-
-### 1. Methodology
+## 1. Methodology
 This script builds a multi-layered analytical view to benchmark football player market values. It uses statistical percentiles (P5, Q1, Median, Q3, P95) to categorize players relative to their specific peer groups (League, Position, and Age Bucket).
 
-### 2. SQL Implementation
+## 2. SQL Implementation
 
-#### 1. VIEW DEFINITION: Market Benchmarking Layer
+### 1. VIEW DEFINITION: Market Benchmarking Layer
 
 - This view prepares a comprehensive dataset where every player's value is compared against the statistical distribution of their specific peer group.
 
@@ -95,7 +93,7 @@ WHERE cb.is_current = TRUE
 ORDER BY cb.current_competition_id, cb.current_club_name, cb.position, cb.age_bucket;
 ```
 
-#### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
+### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
 
 **1. What are the 'Elite' players in current Bundesliga season (2025)?**
    - Purpose: Isolate players in the top 5% of the market (Outliers)
