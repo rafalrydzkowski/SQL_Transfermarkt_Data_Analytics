@@ -32,6 +32,8 @@ Aggregating performance metrics (Win Rate, PPG, Goals) across all leagues, group
 
 ```
 
+**Findings:** 
+
 #### 2. 
 
 -
