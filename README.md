@@ -8,7 +8,7 @@
 
 
 ## 🌟 About Me
-I am a **Data Analytics enthusiast** with a focus on building scalable, high-integrity data warehouses. I specialize in transforming raw, messy datasets into actionable business intelligence using PostgreSQL and modern architectural patterns.
+I am a **Data Analytics enthusiast** focused on transforming complex sports datasets into actionable business intelligence. My expertise lies in leveraging **PostgreSQL 16** to architect end-to-end analytical solutions—from raw data ingestion to high-level KPI reporting.
 
 * **Looking for:** Junior Data Analyst roles.
 * **Tech I love:** SQL (PostgreSQL), Excel, Tableau
