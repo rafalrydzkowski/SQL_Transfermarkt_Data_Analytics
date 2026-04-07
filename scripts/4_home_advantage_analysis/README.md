@@ -43,10 +43,15 @@ ORDER BY win_rate_pct DESC;
 ```
 
 **Findings:** 
+  
 | match_location | win_rate_pct | avg_points | avg_goals_scored | avg_goals_conceded | avg_goal_diff |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Home** | 44.60 | 1.59 | 1.54 | 1.21 | 0.32 |
 | **Away** | 30.37 | 1.16 | 1.21 | 1.54 | -0.32 |
+
+- **Significant Performance Gap:** Home teams demonstrate a clear competitive advantage, with a win rate of 44.60% compared to 30.37% for away teams—a substantial spread of 14.23 percentage points.
+- **Goal Efficiency:** On average, playing at home team has 0.32 more goals scored per match while reducing goals conceded by the same margin, resulting in a positive goal differential (+0.32) vs. a defensive deficit away (-0.32).
+- **Points Per Game (PPG):** The home advantage translates into an average of 1.59 points per game, which is 37% higher than the away average of 1.16 PPG, highlighting the critical role of stadium environment in season-long standings.
 
 #### 2. 
 
