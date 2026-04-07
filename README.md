@@ -22,7 +22,7 @@ The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle
 
 ---
 
-## 📈 Analysis Modules
+## 📈 Business & Analytical Use Cases
 
 ### 1. Squad Capital Efficiency (The "Moneyball" Analysis)
 **Purpose:** Identifying "overperformers" by calculating the **Market Value Cost per Point (ROI)** for the 2025 season.
@@ -103,7 +103,7 @@ This project showcases a wide range of SQL techniques, transitioning from basic 
 
 
 ## 🌟 About Me
-I am a **Data Analytics enthusiast** focused on transforming complex sports datasets into actionable business intelligence. My expertise lies in leveraging **PostgreSQL 16** to architect end-to-end analytical solutions—from raw data ingestion to high-level KPI reporting.
+I am a **Data Analytics Enthusiast** focused on transforming complex sports datasets into actionable business intelligence. My expertise lies in leveraging **PostgreSQL 16** to architect end-to-end analytical solutions—from raw data ingestion to high-level KPI reporting.
 
 * **Looking for:** Junior Data Analyst roles.
 * **Tech I love:** SQL (PostgreSQL), Excel, Tableau
