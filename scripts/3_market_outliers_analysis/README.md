@@ -117,17 +117,6 @@ WHERE
 ORDER BY position, age_bucket;
 ```
 
-**Findings:** 
-
-
----
-
-## Conclusion
-- **Valuation Precision:** Standard yearly averages in football data often suffer from "valuation drift." By implementing a closest-date matching logic via ABS(s.first_game - v.date_of_valuation), this model ensures that the ROI is calculated based on the most accurate market sentiment at the moment a player actually impacts the squad.
-- **The "Efficiency Gap":** In the Bundesliga, the difference between the most and least efficient clubs is staggering. FC St. Pauli (2.6M €/pt) vs. VfL Wolfsburg (14.6M €/pt) demonstrates that capital alone does not guarantee points; Wolfsburg pays nearly 6x more for the same result on the pitch.
-- **Moneyball Candidates:** Query #2 identifies the "Golden Subset"—clubs that are not only financially efficient (Top 3 in CpP) but also competitively superior (Total Points > League Average). Teams like FC Brentford (Premier League) and Gil Vicente (Liga Portugal) represent the peak of modern football management: high sporting output with low capital risk.
-- **Risk Mitigation:** This framework allows Sporting Directors to set a "Target CpP" for their league. If a club's CpP is significantly higher than the league average (e.g., Bayern München at 14.44M €/pt), they must justify it through Champions League revenue or global brand equity; otherwise, it signals a high-risk financial model.
-
 ---
 
 ## How to Use
