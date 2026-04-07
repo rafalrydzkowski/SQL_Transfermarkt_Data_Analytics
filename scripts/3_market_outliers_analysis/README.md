@@ -1,4 +1,4 @@
-#  Market Outliers Analysis
+#  💸 Market Outliers Analysis
 
 ## Analysis Overview
 
