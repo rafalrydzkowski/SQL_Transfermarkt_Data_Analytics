@@ -17,14 +17,12 @@
 
 ---
 
-## Analysis Structure
-
-### 1. Methodology
+## 1. Methodology
 Aggregating performance metrics (Win Rate, PPG, Goals) across all leagues, grouped by the 'is_home' flag.
 
-### 2. SQL Implementation
+## 2. SQL Implementation
 
-#### 1. Do teams perform better at their home games than on the away games?
+### **1. Do teams perform better at their home games than on the away games?**
 
 ```sql
 SELECT
@@ -51,7 +49,7 @@ ORDER BY win_rate_pct DESC;
 - **Goal Efficiency:** On average, playing at home team has 0.32 more goals scored per match while reducing goals conceded by the same margin, resulting in a positive goal differential (+0.32) vs. a defensive deficit away (-0.32).
 - **Points Per Game (PPG):** The home advantage translates into an average of 1.59 points per game, which is 37% higher than the away average of 1.16 PPG, highlighting the critical role of stadium environment in season-long standings.
 
-#### 2. Are there any teams that perform better at away games than at home games?
+### **2. Are there any teams that perform better at away games than at home games?**
 
 ```sql
 SELECT
@@ -72,7 +70,7 @@ ORDER BY avg_points_diff DESC;
 **Findings:** 
 - There are 15 teams in the dataset that perform better away than home (e.g. Ipswich Town in Premier League: home avg ppg = 0.27, away avg ppg = 0.9)
 
-#### 3. What are the 3 “strongest home fortress” (percentage of home games with no losses) for each league?
+### **3. What are the 3 “strongest home fortress” (percentage of home games with no losses) for each league?**
 
 ```sql
 WITH cte_rate AS
@@ -108,7 +106,7 @@ ORDER BY competition_id, fortress_rank;
 **Findings:** 
 - For example TOP 3 “strongest home fortress” in Spain are: 1. Atletico Madrid (no_loss_pct = 91.57%), 2. Real Madrid (no_loss_pct = 91.15%), 3. FC Barcelona (no_loss_pct = 90.77%)
 
-#### 4. Do referees struggle to handle the pressure from the crowd and tend to show fewer cards to the home team than to the away team?
+### **4. Do referees struggle to handle the pressure from the crowd and tend to show fewer cards to the home team than to the away team?**
 
 ```sql
 WITH cte_cards AS
@@ -142,7 +140,7 @@ ORDER BY ts.is_home DESC;
 - Away Teams receive on average 15.3% more yellow cards comparing to home teams
 - Away Teams receive on average 14% more yellow cards comparing to home teams
 
-#### 5. In which league home game advantage is the biggest?
+### **5. In which league home game advantage is the biggest?**
 
 ```sql
 SELECT
