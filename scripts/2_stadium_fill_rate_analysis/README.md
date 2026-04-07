@@ -15,12 +15,10 @@
 
 ---
 
-## Analysis Structure
-
-### 1. Methodology
+## 1. Methodology
 Used NTILE(5) partitioned by club_id to isolate the crowd effect from team quality. By comparing a club's performance  at their peak attendance vs. their own low-attendance games, we eliminate the bias of top-tier teams always having full stadiums.
 
-### 2. SQL Implementation
+## 2. SQL Implementation
 
 This query calculate stadium fill rate and assign localized quintiles. 
 Group games into 5 buckets PER CLUB to ensure fair comparison:
