@@ -15,9 +15,7 @@
 
 ---
 
-## Analysis Structure
-
-### 1. Methodology
+## 1. Methodology
 This script identifies manager changes within a season, calculates the Points Per Game (PPG) for the 5 matches immediately preceding and following the change, and categorizes the outcome.
 #### Logic:
 1. Detects transitions where own_manager_name changes.
@@ -25,11 +23,9 @@ This script identifies manager changes within a season, calculates the Points Pe
 3. Requires the new manager to have coached at least 5 games.
 4. Calculates 5-game rolling averages for pre- and post-change performance.
     
-### 2. SQL Implementation
+## 2. SQL Implementation
 
-
-
-#### 1. VIEW DEFINITION: 
+### 1. VIEW DEFINITION: 
 
 - This VIEW prepares a data-driven framework to evaluate if mid-season manager change lead to genuine statistical improvement
 
@@ -87,9 +83,9 @@ WHERE
 ORDER BY competition_id, season DESC, first_game_date DESC;
 ```
 
-#### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
+### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
 
-**1. Does the 'New Manager Bound Effect' actually works?**
+### **2.1. Does the 'New Manager Bound Effect' actually works?**
 ```sql
 SELECT
 	'New Manager' AS type,
@@ -104,7 +100,7 @@ FROM gold.vw_manager_bounce_effect;
 | New Manager | 1.246 | 0.766 | 0.479 |
 - Following a managerial change, clubs experience a substantial performance increase, with average points per game rising from 0.766 to 1.246 (0.479 ppg diff)
 
-**2. In which leagues (e.g., Premier League vs La Liga vs Bundesliga VS Serie A) does a manager change most often result in the “Success - Significant Bounce” category?**
+### **2.2. In which leagues (e.g., Premier League vs La Liga vs Bundesliga VS Serie A) does a manager change most often result in the “Success - Significant Bounce” category?**
 ```sql
 SELECT
 	competition_id,
@@ -133,7 +129,7 @@ ORDER BY success_percentage DESC;
 - The German Bundesliga (L1) exhibits the highest responsiveness to coaching changes, with 65.38% success rate for "Significant Bounce" and the lowest failure rate in the sample (2.88%).
 - The Spanish LaLiga (ES1) exhibits the lowest responsiveness to coaching changes, with 51.91% success rate for "Significant Bounce" and the second highest failure rate in the sample (9.16%).
 
-**3. Which specific managers (managed at least 3 times) have historically achieved the highest average ppg_diff in their careers?**
+### **2.3. Which specific managers (managed at least 3 times) have historically achieved the highest average ppg_diff in their careers?**
 ```sql
 SELECT
 	new_manager,
@@ -162,7 +158,7 @@ LIMIT 10;
 - **Proven Reliability:** Mesut Bakkal stands out as the most battle-tested specialist in the sample; achieving a massive +1.163 PPG diff across 9 different appointments indicates a world-class ability to stabilize struggling squads.
 
 
-**4. What are TOP 5 "Firefighters" (managed at least 3 times) in Bundesliga?**
+### **2.4. What are TOP 5 "Firefighters" (managed at least 3 times) in Bundesliga?**
 ```sql
 SELECT
 	competition_id,
