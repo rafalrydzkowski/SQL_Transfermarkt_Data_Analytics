@@ -142,6 +142,32 @@ ORDER BY ts.is_home DESC;
 - Away Teams receive on average 15.3% more yellow cards comparing to home teams
 - Away Teams receive on average 14% more yellow cards comparing to home teams
 
+#### 5. In which league home game advantage is the biggest?
+
+```sql
+SELECT
+    c.competition_id AS competition_id,
+    c.name AS league_name,
+    c.country_name AS league_country,
+    ROUND(AVG(CASE WHEN ts.is_home = TRUE THEN ts.is_win::INT END)*100,2) AS home_win_rate_pct,
+    ROUND(AVG(CASE WHEN ts.is_home = FALSE THEN ts.is_win::INT END)*100,2) AS away_win_rate_pct,
+    ROUND(AVG(CASE WHEN ts.is_home = TRUE THEN ts.points END) - AVG(CASE WHEN ts.is_home = FALSE THEN ts.points END),2) AS avg_points_diff
+FROM gold.fact_team_stats AS ts
+LEFT JOIN gold.dim_competitions AS c
+ON ts.competition_id = c.competition_id
+WHERE ts.competition_id <> 'UKR1' -- Filter out anomalies (e.g., Ukraine League: many home games played at neutral/away venues)
+GROUP BY c.competition_id, c.country_name, c.name
+ORDER BY avg_points_diff DESC
+LIMIT 3;
+```
+
+**Findings:** 
+| competition_id | league_name | league_country | home_win_rate_pct | away_win_rate_pct | avg_points_diff |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| GR1 | SUPER LEAGUE 1 | Greece | 47.32 | 26.97 | 0.61 |
+| ES1 | LALIGA | Spain | 45.88 | 28.66 | 0.52 |
+| TR1 | SUPER LIG | Turkey | 45.19 | 29.06 | 0.48 |
+- The biggest home game advantage is in Greece. For this league home win rate is equal 47.32%.
 ---
 
 ## Conclusion
