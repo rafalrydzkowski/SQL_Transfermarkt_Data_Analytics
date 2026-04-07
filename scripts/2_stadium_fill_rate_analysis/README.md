@@ -72,7 +72,7 @@ ORDER BY attendance_quintile ASC;
 ---
 
 ## Conclusion
-- Extremely high attendance (Quintile 1) might represent "high-stakes" games Derbies, title deciders) where the home team faces immense psychological pressure or plays against equally strong/stronger opponents who are also highly motivated.
+- **The "Opponent Quality" Bias:** High-attendance fixtures (Quintile 1) are strongly correlated with top-tier opponents. In these games, the home advantage might be statistically offset by the higher technical quality and tactical discipline of the visiting team (e.g., 'Big Six' matchups), leading to a lower win probability despite the crowd support.
 
 ---
 
