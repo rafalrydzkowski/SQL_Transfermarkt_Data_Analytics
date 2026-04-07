@@ -25,7 +25,7 @@ WITH cte_stadium_performance AS (
         NTILE(5) OVER (
             PARTITION BY t.club_id 
             ORDER BY (t.attendance::NUMERIC / NULLIF(c.stadium_seats, 0)::NUMERIC) DESC
-        ) AS attendance_quintile -- assign quintiles
+        ) AS attendance_quintile_bucket -- assign quintiles
     FROM gold.fact_team_stats AS t
     INNER JOIN gold.dim_clubs AS c ON t.club_id = c.club_id
     WHERE
@@ -37,12 +37,12 @@ WITH cte_stadium_performance AS (
 
 -- FINAL AGGREGATION: Analyzing win probability and average points per attendance quintile
 SELECT
-    attendance_quintile,
+    attendance_quintile_bucket,
     ROUND(AVG(is_win::INT) * 100, 2) AS win_probability_pct, -- Win Probability: Average of boolean is_win converted to integer
     ROUND(AVG(points), 2) AS avg_points_per_game -- Points Performance: Average points earned per quintile
 FROM cte_stadium_performance
-GROUP BY attendance_quintile
-ORDER BY attendance_quintile ASC;
+GROUP BY attendance_quintile_bucket
+ORDER BY attendance_quintile_bucket ASC;
 /*
 Findings: 
         The highest attendance quintile (Quintile 1) surprisingly shows 
