@@ -139,12 +139,16 @@ ORDER BY ts.is_home DESC;
 | :--- | :--- | :--- |
 | Home Team | 1.89 | 0.050 |
 | Away Team | 2.18 | 0.057 |
-- Home Teams receive on average 0.29 yellow cards less and 0.007 red cards less than away teams
+- Away Teams receive on average 15.3% more yellow cards comparing to home teams
+- Away Teams receive on average 14% more yellow cards comparing to home teams
 
 ---
 
 ## Conclusion
-- 
+- **The 14% Performance boost**: Home teams gain a 14.23 percentage point advantage in win probability compared to away teams. This delta is not merely a "feeling" but a measurable statistical reality that translates into 37% higher point efficiency (1.59 PPG vs. 1.16 PPG).
+- **The "Referee Bias" Hypothesis**: Disciplinary data provides compelling evidence of the "12th Man" effect on officiating. The fact that away teams receive 15.3% more yellow cards and 14% more red cards supports the theory that crowd pressure and stadium atmosphere subconsciously influence referee decision-making or alternatively, force visiting teams into higher-risk defensive behaviors.
+- While the general trend is overwhelming, the identification of "Away Specialists" (15 teams) proves that Home Advantage is not an absolute law. Teams like Ipswich Town demonstrate that certain tactical setups or psychological profiles can occasionally thrive in hostile environments, often outperforming their home benchmarks.
+- **The "Home Fortress" Benchmark:** Top-tier clubs like Atletico Madrid and Real Madrid have turned Home Advantage into a near-impenetrable wall, with no-loss rates exceeding 90%. For these elite organizations, the stadium is more than a pitch—it is a critical asset that guarantees league stability.
 ---
 
 ## How to Use
