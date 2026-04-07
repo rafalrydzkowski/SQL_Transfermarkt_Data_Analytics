@@ -2,7 +2,7 @@
 
 ## Analysis Overview
 
-**Title**: Stadium Fill Rate Analysis
+**Title**: Stadium Fill Rate
 **Database**: `PostgreSQL 16+`  
 **Schema**: `gold.`  
 **Target Audience**: 
