@@ -72,7 +72,7 @@ ORDER BY attendance_quintile ASC;
 ---
 
 ## Conclusion
--
+- Extremely high attendance (Quintile 1) might represent "high-stakes" games Derbies, title deciders) where the home team faces immense psychological pressure or plays against equally strong/stronger opponents who are also highly motivated.
 
 ---
 
