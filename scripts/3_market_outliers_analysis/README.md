@@ -2,7 +2,7 @@
 
 ## Analysis Overview
 
-**Title**: Football Market Analytics - Elite Player Identification 
+**Title**: Football Market Analytics - Elite Player Identification                               
 **Database**: `PostgreSQL 16+`  
 **Schema**: `gold.`  
 **Target Audience**: Scouting Staff
