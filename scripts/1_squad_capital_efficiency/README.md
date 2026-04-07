@@ -99,9 +99,7 @@ ON cl.competition_id = c.competition_id
 ORDER BY c.competition_id, efficiency_rank;
 ```
 
-#### 2. BUSINESS USAGE
-
-- The following SQL queries were developed to answer specific business questions:
+#### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
 
 1. What are TOP 3 the best performing and the worst performing teams in Bundesliga?
 ```sql
