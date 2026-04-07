@@ -133,7 +133,7 @@ ORDER BY success_percentage DESC;
 - The German Bundesliga (L1) exhibits the highest responsiveness to coaching changes, with 65.38% success rate for "Significant Bounce" and the lowest failure rate in the sample (2.88%).
 - The Spanish LaLiga (ES1) exhibits the lowest responsiveness to coaching changes, with 51.91% success rate for "Significant Bounce" and the second highest failure rate in the sample (9.16%).
 
-3. 3. Which specific managers (managed at least 3 times) have historically achieved the highest average ppg_diff in their careers?
+3. Which specific managers (managed at least 3 times) have historically achieved the highest average ppg_diff in their careers?
 ```sql
 SELECT
 	new_manager,
@@ -158,7 +158,8 @@ LIMIT 10;
 | Claude Puel | 1.133 | 3 |
 | Javi Gracia | 1.133 | 3 |
 | Pascal Dupraz | 1.117 | 3 |
--
+- **Elite Efficiency Leaders:** Burak Yılmaz (1.400) and Luís Castro (1.333) lead the ranking as the most impactful "new brooms," consistently delivering the highest immediate point uplift upon appointment.
+- **Proven Reliability:** Mesut Bakkal stands out as the most battle-tested specialist in the sample; achieving a massive +1.163 PPG diff across 9 different appointments indicates a world-class ability to stabilize struggling squads.
 
 
 4. What are TOP 5 "Firefighters" (managed at least 3 times) in Bundesliga?
