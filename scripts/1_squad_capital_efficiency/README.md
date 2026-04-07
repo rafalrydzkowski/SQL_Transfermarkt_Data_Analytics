@@ -21,7 +21,7 @@ We join player-level valuations with match-day performance metrics. To ensure ac
 
 The following production-grade query identifies which clubs are most efficient at converting market value into league points.
 
-### 1. VIEW DEFINITION: Squad Capital Efficiency Layer
+#### 1. VIEW DEFINITION: Squad Capital Efficiency Layer
 
 - This view prepares a comprehensive dataset where every team's 'Market Value Cost per Point' (ROI) is compared against their league.
 
@@ -99,7 +99,7 @@ ON cl.competition_id = c.competition_id
 ORDER BY c.competition_id, efficiency_rank;
 ```
 
-### 2. BUSINESS USAGE
+#### 2. BUSINESS USAGE
 
 - The following SQL queries were developed to answer specific business questions:
 
