@@ -42,20 +42,6 @@ Aggregating performance metrics (Win Rate, PPG, Goals) across all leagues, group
 
 **Findings:** 
 
-| league_name | type | efficiency_rank | club_name | total_points | avg_league_total_points | cost_per_point_in_mln | 
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| JUPILER PRO LEAGUE | TOP 3 BEST PERFORMERS | 3 | vv-st-truiden | 57 | 38.25 | 0.61 | 
-| SUPERLIGAEN | TOP 3 BEST PERFORMERS | 1 | sonderjyske | 36 | 30.75 | 0.40 | 
-| PREMIER LEAGUE | TOP 3 BEST PERFORMERS | 1 | afc-sunderland | 40 | 39.85 | 8.70 | 
-| PREMIER LEAGUE | TOP 3 BEST PERFORMERS | 2 | fc-brentford | 44 | 39.85 | 9.63 | 
-| PREMIER LEAGUE | TOP 3 BEST PERFORMERS | 3 | fc-everton | 43 | 39.85 | 10.25 | 
-| SUPER LEAGUE 1 | TOP 3 BEST PERFORMERS | 1 | apo-levadiakos | 39 | 33.00 | 0.32 | 
-| BUNDESLIGA | TOP 3 BEST PERFORMERS | 2 | tsg-1899-hoffenheim | 49 | 34.50 | 3.43 | 
-| LIGA PORTUGAL BWIN | TOP 3 BEST PERFORMERS | 1 | gil-vicente-fc | 41 | 34.11 | 0.75 | 
-| LIGA PORTUGAL BWIN | TOP 3 BEST PERFORMERS | 2 | moreirense-fc | 35 | 34.11 | 0.76 | 
-| SCOTTISH PREMIERSHIP | TOP 3 BEST PERFORMERS | 1 | falkirk-fc | 42 | 39.25 | 0.12 | 
-| SCOTTISH PREMIERSHIP | TOP 3 BEST PERFORMERS | 2 | motherwell-fc | 53 | 39.25 | 0.18 | 
-| SUPER LIG | TOP 3 BEST PERFORMERS | 1 | goztepe | 42 | 33.56 | 0.94 | 
 
 ---
 
@@ -67,5 +53,5 @@ Aggregating performance metrics (Win Rate, PPG, Goals) across all leagues, group
 
 1. **Clone the Repository**: Clone this project repository from GitHub.
 2. **Set Up the Database**: Run the SQL scripts provided in the [0_database_initialization](./scripts/0_database_initialization) file to create and populate the database.
-3. **Run the Queries**: Use the SQL queries provided in the `1_squad_capital_efficiency_analysis.sql` file to perform your analysis.
+3. **Run the Queries**: Use the SQL queries provided in the `4_home_advantage_analysis.sql` file to perform your analysis.
 4. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
