@@ -8,7 +8,7 @@
 
 
 ## 🌟 About Me
-I am a **Data Engineering / Data Analytics enthusiast** with a focus on building scalable, high-integrity data warehouses. I specialize in transforming raw, messy datasets into actionable business intelligence using PostgreSQL and modern architectural patterns.
+I am a **Data Analytics enthusiast** with a focus on building scalable, high-integrity data warehouses. I specialize in transforming raw, messy datasets into actionable business intelligence using PostgreSQL and modern architectural patterns.
 
 * **Looking for:** Junior Data Analyst roles.
 * **Tech I love:** SQL (PostgreSQL), Excel, Tableau
