@@ -1,4 +1,4 @@
-# ⚽️ Stadium Fill Rate Analysis Analysis 💶
+# 🏟️ Stadium Fill Rate Analysis Analysis
 
 ## Analysis Overview
 
