@@ -99,33 +99,54 @@ ON cl.competition_id = c.competition_id
 ORDER BY c.competition_id, efficiency_rank;
 ```
 
-### 2. 
+### 2. BUSINESS USAGE
 
-The following SQL queries were developed to answer specific business questions:
+- The following SQL queries were developed to answer specific business questions:
 
-1. ** **:
+1. What are TOP 3 the best performing and the worst performing teams in Bundesliga?
 ```sql
+(SELECT
+    league_name,
+    'TOP 3 BEST PERFORMERS' AS type,
+    efficiency_rank,
+    club_name,
+    cost_per_point_in_mln
+FROM gold.vw_squad_capital_efficiency
+WHERE 
+    competition_id = 'L1'
+ORDER BY efficiency_rank
+LIMIT 3)
 
+UNION ALL
+
+(SELECT
+    league_name,
+    'TOP 3 WORST PERFORMERS' AS type,
+    efficiency_rank,
+    club_name,
+    cost_per_point_in_mln
+FROM gold.vw_squad_capital_efficiency
+WHERE 
+    competition_id = 'L1'
+ORDER BY efficiency_rank DESC
+LIMIT 3)
+ORDER BY efficiency_rank;
 ```
 
-2. ** **:
+2. Are there any teams that have points average higher than the competition one and they are in TOP 3 'Capital Efficient'?
 ```sql
-
-```
-
-3. ** **:
-```sql
-
-```
-
-4. ** **:
-```sql
-
-```
-
-5. ** **:
-```sql
-
+SELECT
+    league_name,
+    'TOP 3 BEST PERFORMERS' AS type,
+    efficiency_rank,
+    club_name,
+    total_points,
+    avg_league_total_points,
+    cost_per_point_in_mln
+FROM gold.vw_squad_capital_efficiency
+WHERE
+    efficiency_rank <= 3 AND
+    total_points > avg_league_total_points;
 ```
 
 ## Findings
