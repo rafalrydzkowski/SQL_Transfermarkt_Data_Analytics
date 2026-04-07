@@ -24,15 +24,29 @@ Aggregating performance metrics (Win Rate, PPG, Goals) across all leagues, group
 
 ### 2. SQL Implementation
 
-#### 1. 
+#### 1. Do teams perform better at their home games than on the away games?
 
 - 
 
 ```sql
-
+SELECT
+    CASE WHEN is_home = TRUE THEN 'Home' ELSE 'Away' END AS match_location,
+    Round(AVG(is_win::INT)*100,2) AS win_rate_pct,
+    ROUND(AVG(points),2) AS avg_points,
+    ROUND(AVG(own_goals),2) AS avg_goals_scored,
+    ROUND(AVG(opponent_goals),2) AS avg_goals_conceded,
+    ROUND(AVG(own_goals - opponent_goals), 2) AS avg_goal_diff
+FROM gold.fact_team_stats
+WHERE competition_id <> 'UKR1' -- Filter out anomalies (e.g., Ukraine League: many home games played at neutral/away venues)
+GROUP BY is_home
+ORDER BY win_rate_pct DESC;
 ```
 
 **Findings:** 
+| match_location | win_rate_pct | avg_points | avg_goals_scored | avg_goals_conceded | avg_goal_diff |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Home** | 44.60 | 1.59 | 1.54 | 1.21 | 0.32 |
+| **Away** | 30.37 | 1.16 | 1.21 | 1.54 | -0.32 |
 
 #### 2. 
 
