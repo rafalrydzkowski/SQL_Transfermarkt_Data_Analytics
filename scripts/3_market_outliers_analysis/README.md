@@ -93,7 +93,7 @@ WHERE cb.is_current = TRUE
 ORDER BY cb.current_competition_id, cb.current_club_name, cb.position, cb.age_bucket;
 ```
 
-### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
+### 2. BUSINESS USAGE:
 
 #### **1. What are the 'Elite' players in current Bundesliga season (2025)?**
    - Purpose: Isolate players in the top 5% of the market (Outliers)
