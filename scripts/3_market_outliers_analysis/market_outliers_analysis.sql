@@ -24,7 +24,8 @@ WITH cte_bucket AS
     p.player_id, 
     p.name, 
     p.last_season, 
-    p.position, 
+    p.position,
+    p.current_club_id,
     p.current_club_name,
     p.current_club_domestic_competition_id AS current_competition_id,
     v.valuation_age,
@@ -61,8 +62,10 @@ GROUP BY competition_id_at_valuation, position, age_bucket)
 -- OUTPUT: Final Assembly with Peer Metrics
 -- Joins raw player data with group-level benchmarks for granular comparison.
 SELECT
+    cb.player_id,
     cb.name AS player_name,
     cb.last_season,
+    cb.current_club_id,
     cb.current_club_name,
     cb.current_competition_id,
     cb.position,
@@ -80,8 +83,10 @@ WHERE cb.is_current = TRUE
 ORDER BY cb.current_competition_id, cb.current_club_name, cb.position, cb.age_bucket;
 
 -- =============================================================================
--- 2. EXAMPLE QUERY: 'Elite' Identification in current season (Bundesliga 2025)
+-- 2. BUSINESS USAGE
 -- =============================================================================
+
+-- 1. 'Elite' Identification in current season (Bundesliga, 2025)
 -- Purpose: Isolate players in the top 5% of the market (Outliers).
 -- Logic: Filter for the active players (2025 season) and players exceeding the P95 threshold.
 
@@ -97,4 +102,5 @@ FROM gold.vw_market_benchmark
 WHERE 
     last_season = 2025 AND
     current_competition_id = 'L1' AND
-    market_value_in_eur >= p95_value;
+    market_value_in_eur >= p95_value
+ORDER BY position, age_bucket;
