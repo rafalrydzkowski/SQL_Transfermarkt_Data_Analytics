@@ -19,7 +19,8 @@ The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle
 
 ## 🛠 Tech Stack
 * **Language:** SQL (PostgreSQL/Standard SQL)
-* **Key Techniques:** * Common Table Expressions (CTEs) for modular logic.
+* **Key Techniques:**
+    * Common Table Expressions (CTEs) for modular logic.
     * Advanced Window Functions (`RANK`, `NTILE`, `PERCENT_RANK`, `LAG`).
     * Statistical Aggregations (`PERCENTILE_CONT` for quartiles and outliers).
     * Data Cleaning & Normalization (handling NULLs, filtering anomalies).
@@ -66,36 +67,23 @@ The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle
 * Who are the top 5% market outliers in the 2025 season?
 * In which leagues is the home-field advantage most prominent?
 
----
-
 ## 🔑 Key SQL Concepts Implemented
 
-This project showcases a wide range of SQL techniques, transitioning from basic data retrieval to advanced analytical engineering:
+### 🧠 Advanced Analytics & Window Functions
+* **Ranking & Tiering:** `RANK()` for league efficiency and `ROW_NUMBER()` for time-sensitive valuation matching.
+* **Statistical Bucketing:** `NTILE(5)` used to eliminate team-quality bias by analyzing performance across localized attendance quintiles.
+* **Trend & Change Detection:** `LAG()` with multi-step offset validation to detect manager transitions and filter out temporary stand-ins.
+* **Percentile Distributions:** `PERCENTILE_CONT` and `PERCENT_RANK()` to establish market benchmarks (P5, Q1, Median, Q3, P95) and score individual performance impact.
 
-### 1. Advanced Window Functions
-* **Ranking & Row Identification:** Utilized `RANK()` to identify top/bottom performers and `ROW_NUMBER()` with `PARTITION BY` to select the most relevant player valuations closest to specific match dates.
-* **Statistical Bucketing:** Implemented `NTILE(5)` to distribute stadium attendance into quintiles, allowing for an unbiased comparison across clubs of different sizes.
-* **Analytical Offsets:** Leveraged `LAG()` to detect manager changes by comparing current rows with previous match records.
-* **Relative Distribution:** Used `PERCENT_RANK()` to calculate the statistical significance (percentile) of the "Manager Bounce" effect relative to historical data.
+### 🛠 Data Engineering & Architecture
+* **Modular SQL (CTEs):** Heavily layered Common Table Expressions to transform raw event data into structured analytical layers.
+* **Dynamic Rolling Averages:** `ROWS BETWEEN` frames to calculate 5-game PPG (Points Per Game) momentum shifts.
+* **Defensive Programming:** Implementation of `NULLIF` to prevent zero-division errors in ROI calculations and strict data cleaning for competition-specific anomalies.
 
-### 2. Complex Data Transformations & Aggregations
-* **Common Table Expressions (CTEs):** Heavily utilized `WITH` clauses to create modular, readable, and maintainable code structures, breaking down complex logic into logical steps.
-* **Window Frames (Rolling Averages):** Applied `ROWS BETWEEN` to calculate 5-game rolling averages (Points Per Game) for pre- and post-managerial change analysis.
-* **Conditional Aggregation:** Embedded `CASE WHEN` logic inside `AVG()` and `SUM()` functions to calculate specific metrics like "No Loss Rate" or "Home Win Percentage" within a single scan.
-
-### 3. Statistical Analysis & Benchmarking
-* **Continuous Percentiles:** Employed `PERCENTILE_CONT(...) WITHIN GROUP (ORDER BY ...)` to calculate Median, Q1, Q3, and P95 values, establishing rigorous market benchmarks for player valuations.
-* **Outlier Detection:** Created logic to isolate "Market Outliers" (top 5%) by comparing individual player values against calculated P95 thresholds within specific peer groups.
-
-### 4. Data Quality & Defensive Coding
-* **Anomaly Handling:** Explicitly filtered out data anomalies (e.g., excluding specific leagues like 'RU1' or 'UKR1' during conflict periods) to ensure analysis integrity.
-* **Zero-Division Prevention:** Used `NULLIF(..., 0)` to prevent runtime errors in ROI calculations (Market Value / Points).
-* **Schema Orchestration:** Designed reusable analytical layers using `CREATE OR REPLACE VIEW` to separate raw data processing from business-facing reporting.
-
-### 5. Advanced Joins & Filtering
-* **Multi-Condition Joins:** Performed complex joins on multiple keys (e.g., joining on Competition, Position, and Age Bucket simultaneously) to map players to their specific statistical peer groups.
-* **Self-Join Logic:** Indirectly implemented through Window Functions (`LAG`) to validate "real" manager changes and exclude temporary stand-ins.
-
+### 📈 Business Logic & ROI Metrics
+* **Capital Efficiency (ROI):** Calculated 'Cost per Point' metrics by joining multi-million euro market valuations with league performance stats.
+* **Categorical Performance Modeling:** Created custom business logic using complex `CASE` statements to classify outcomes (e.g., "Success - Significant Bounce" vs "Performance Decline").
+* **Peer Group Benchmarking:** Multi-key joins (League + Position + Age Bucket) to ensure players are only compared to their relevant market peers.
 ---
 
 ## 🚦 Getting Started
