@@ -19,7 +19,7 @@
 
 ### 1. Methodology
 This script identifies manager changes within a season, calculates the Points Per Game (PPG) for the 5 matches immediately preceding and following the change, and categorizes the outcome.
-Logic:
+#### Logic:
     - 1. Detects transitions where own_manager_name changes.
     - 2. Uses double-LAG validation to ignore temporary absences (e.g., illness).
     - 3. Requires the new manager to have coached at least 5 games.
