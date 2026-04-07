@@ -139,7 +139,7 @@ ORDER BY ts.is_home DESC;
 | :--- | :--- | :--- |
 | Home Team | 1.89 | 0.050 |
 | Away Team | 2.18 | 0.057 |
-- 
+- Home Teams receive on average 0.29 yellow cards less and 0.007 red cards less than away teams
 
 ---
 
