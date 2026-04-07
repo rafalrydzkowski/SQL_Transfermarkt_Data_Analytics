@@ -9,9 +9,13 @@ This repository contains a series of advanced SQL analytical case studies based 
 
 As a **Junior Data Analyst**, I developed these scripts to demonstrate proficiency in complex data transformations, statistical benchmarking, and identifying trends that help football clubs or betting agencies make data-driven decisions.
 
+---
+
 ## 🗂️ Data Source & Raw Dataset
 
 The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle (David Cariboo)](https://www.kaggle.com/datasets/davidcariboo/player-scores). This dataset provides a comprehensive look at European football dynamics from 2012 to the present.
+
+---
 
 ## 🛠 Tech Stack
 * **Language:** SQL (PostgreSQL/Standard SQL)
