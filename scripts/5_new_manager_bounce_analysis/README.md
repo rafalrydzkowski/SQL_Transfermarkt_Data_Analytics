@@ -184,17 +184,21 @@ LIMIT 5;
 | L1 | Huub Stevens | 0.600 | 4 |
 | L1 | Manuel Baum | 0.600 | 3 |
 | L1 | Markus Gisdol | 0.467 | 3 |
--
+- The potential best "firefighter" for a Bundesliga team is Dieter Hecking with average ppg 0.733 higher than the previous manager.
 
 ---
 
 ## Conclusion
--
+- **The ROI of a Managerial Change:** The data confirms a drastic short-term performance uplift, shifting the average PPG from relegation form (0.766) to mid-table stability (1.246). This +0.479 PPG delta translates to nearly 5 additional points over a 10-game stretch—often the definitive margin between relegation and survival.
+- **League-Specific Volatility (TOP 5):** The success of a managerial change is heavily dependent on the league's tactical culture. The Bundesliga is highly responsive (65.38% success rate), suggesting a league environment where fresh motivation and tactical tweaks yield immediate results. Conversely, La Liga shows higher resistance to mid-season changes, indicating that its teams rely on deeper, long-term tactical systems that are harder to fix overnight.
+- **The "Firefighter" Archetype is Real:** The analysis proves that short-term squad stabilization is a distinct, repeatable skill set. While managers like Burak Yılmaz show high peaks, veterans like Mesut Bakkal (averaging a +1.163 PPG bounce across 9 separate appointments) represent the ultimate risk-mitigation hires. They consistently inject "survival points" into struggling squads.
+- **Localized Benchmarking:** By drilling down into specific leagues (e.g., Dieter Hecking's +0.733 PPG impact in the Bundesliga), sporting directors can bypass generic global stats and identify specialized managers who have a proven track record in their exact competitive ecosystem.
+
 ---
 
 ## How to Use
 
 1. **Clone the Repository**: Clone this project repository from GitHub.
 2. **Set Up the Database**: Run the SQL scripts provided in the [0_database_initialization](./scripts/0_database_initialization) file to create and populate the database.
-3. **Run the Queries**: Use the SQL queries provided in the `1_squad_capital_efficiency_analysis.sql` file to perform your analysis.
+3. **Run the Queries**: Use the SQL queries provided in the `5_new_manager_bounce_effect_analysis.sql` file to perform your analysis.
 4. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
