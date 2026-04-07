@@ -4,6 +4,8 @@
 > **This project is a continuation of the Transfermarkt project. If you’d like to learn more about the data warehouse and the Medallion architecture approach I used, see the link below:**
 [SQL_Transfermarkt_Data_Warehouse - Github Repository](https://github.com/rafalrydzkowski/SQL_Transfermarkt_Data_Warehouse)
 
+---
+
 ## Project Overview
 This repository contains a series of advanced SQL analytical case studies based on football data (inspired by Transfermarkt). The project aims to bridge the gap between raw sports data and actionable business insights, focusing on team efficiency, market valuations, and performance psychological factors.
 
