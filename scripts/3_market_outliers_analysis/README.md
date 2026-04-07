@@ -97,7 +97,7 @@ ORDER BY cb.current_competition_id, cb.current_club_name, cb.position, cb.age_bu
 
 #### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
 
-1. What are the 'Elite' players in current Bundesliga season (2025)?
+**1. What are the 'Elite' players in current Bundesliga season (2025)?**
    - Purpose: Isolate players in the top 5% of the market (Outliers)
    - Logic: Filter for the active players (2025 season) and players exceeding the P95 threshold
 ```sql
