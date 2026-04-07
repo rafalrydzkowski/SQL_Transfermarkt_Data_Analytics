@@ -1,6 +1,6 @@
 # Transfermarkt Data Analysis SQL Project
 
-## Project Overview
+## Analysis Overview
 
 **Analysis Title**: Squad Capital Efficiency (SCE) - Season 2025  
 **Database**: `PostgreSQL 16+`  
