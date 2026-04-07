@@ -16,16 +16,15 @@
 
 ---
 
-## Analysis Structure
 
-### 1. Methodology
+## 1. Methodology
 We join player-level valuations with match-day performance metrics. To ensure accuracy, we don't just take the , latest,  valuation; we use a window function to find the valuation record closest to the player's first appearance in the 2025 season for that specific club to avoid market volatility bias.
 
-### 2. SQL Implementation
+## 2. SQL Implementation
 
 The following production-grade query identifies which clubs are most efficient at converting market value into league points.
 
-#### 1. VIEW DEFINITION: Squad Capital Efficiency Layer
+### 1. VIEW DEFINITION: Squad Capital Efficiency Layer
 
 - This view prepares a comprehensive dataset where every team's 'Market Value Cost per Point' (ROI) is compared against their league.
 
@@ -103,9 +102,9 @@ ON cl.competition_id = c.competition_id
 ORDER BY c.competition_id, efficiency_rank;
 ```
 
-#### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
+### 2. BUSINESS USAGE: The following SQL queries were developed to answer specific business questions
 
-1. What are TOP 3 the best performing and the worst performing teams in Bundesliga?
+**1. What are TOP 3 the best performing and the worst performing teams in Bundesliga?**
 ```sql
 (SELECT
     league_name,
@@ -138,7 +137,7 @@ ORDER BY efficiency_rank;
 - TOP 3 best performing teams are: FC St. Pauli (2.6 mln € per point), TSG 1899 Hoffenheim (3.43 mln € per point) & Hamburger SV (4.16 mln € per point)
 - TOP 3 worst performing teams are: Eintracht Frankfurt (12.23 mln € per point), FC Bayern Munchen (14.44 mln € per point) & VFL Wolfsburg (14.62 mln € per point)
   
-2. Are there any teams that have points average higher than the competition one and they are in TOP 3 'Capital Efficient'?
+**2. Are there any teams that have points average higher than the competition one and they are in TOP 3 'Capital Efficient'?**
 ```sql
 SELECT
     league_name,
