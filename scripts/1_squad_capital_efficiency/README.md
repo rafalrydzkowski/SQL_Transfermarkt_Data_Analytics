@@ -166,7 +166,7 @@ WHERE
 | SCOTTISH PREMIERSHIP | TOP 3 BEST PERFORMERS | 2 | motherwell-fc | 53 | 39.25 | 0.18 | 
 | SUPER LIG | TOP 3 BEST PERFORMERS | 1 | goztepe | 42 | 33.56 | 0.94 | 
 
-
+--
 
 ## Conclusion
 - **Valuation Precision:** Standard yearly averages in football data often suffer from "valuation drift." By implementing a closest-date matching logic via ABS(s.first_game - v.date_of_valuation), this model ensures that the ROI is calculated based on the most accurate market sentiment at the moment a player actually impacts the squad.
