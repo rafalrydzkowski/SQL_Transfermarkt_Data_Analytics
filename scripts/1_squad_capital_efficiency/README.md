@@ -1,4 +1,4 @@
-# Squad Capital Efficiency Analysis
+# Squad Capital Efficiency Analysis ⚽️💶
 
 ## Analysis Overview
 
