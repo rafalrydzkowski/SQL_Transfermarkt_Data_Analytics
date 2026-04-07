@@ -10,12 +10,12 @@
 ## Objectives
 
 1.  **Business Analysis**: Evaluate the **Capital Efficiency (ROI)** of football clubs for the 2025 season.
-2.  **Financial KPI**: Identify "Moneyball" overperformers by calculating the **Cost per Point** (Market Value in M€ / Total League Points).
+2.  **Financial KPI**: Identify  | Moneyball |  overperformers by calculating the **Cost per Point** (Market Value in M€ / Total League Points).
 
 ## Analysis Structure
 
 ### 1. Methodology
-We join player-level valuations with match-day performance metrics. To ensure accuracy, we don't just take the "latest" valuation; we use a window function to find the valuation record closest to the player's first appearance in the 2025 season for that specific club to avoid market volatility bias.
+We join player-level valuations with match-day performance metrics. To ensure accuracy, we don't just take the  | latest |  valuation; we use a window function to find the valuation record closest to the player's first appearance in the 2025 season for that specific club to avoid market volatility bias.
 
 ### 2. SQL Implementation
 
@@ -149,10 +149,23 @@ WHERE
     efficiency_rank <= 3 AND
     total_points > avg_league_total_points;
 ```
+**Findings:** 
 
-## Findings
+| league_name | type | efficiency_rank | club_name | total_points | avg_league_total_points | cost_per_point_in_mln | 
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| JUPILER PRO LEAGUE | TOP 3 BEST PERFORMERS | 3 | vv-st-truiden | 57 | 38.25 | 0.61 | 
+| SUPERLIGAEN | TOP 3 BEST PERFORMERS | 1 | sonderjyske | 36 | 30.75 | 0.40 | 
+| PREMIER LEAGUE | TOP 3 BEST PERFORMERS | 1 | afc-sunderland | 40 | 39.85 | 8.70 | 
+| PREMIER LEAGUE | TOP 3 BEST PERFORMERS | 2 | fc-brentford | 44 | 39.85 | 9.63 | 
+| PREMIER LEAGUE | TOP 3 BEST PERFORMERS | 3 | fc-everton | 43 | 39.85 | 10.25 | 
+| SUPER LEAGUE 1 | TOP 3 BEST PERFORMERS | 1 | apo-levadiakos | 39 | 33.00 | 0.32 | 
+| BUNDESLIGA | TOP 3 BEST PERFORMERS | 2 | tsg-1899-hoffenheim | 49 | 34.50 | 3.43 | 
+| LIGA PORTUGAL BWIN | TOP 3 BEST PERFORMERS | 1 | gil-vicente-fc | 41 | 34.11 | 0.75 | 
+| LIGA PORTUGAL BWIN | TOP 3 BEST PERFORMERS | 2 | moreirense-fc | 35 | 34.11 | 0.76 | 
+| SCOTTISH PREMIERSHIP | TOP 3 BEST PERFORMERS | 1 | falkirk-fc | 42 | 39.25 | 0.12 | 
+| SCOTTISH PREMIERSHIP | TOP 3 BEST PERFORMERS | 2 | motherwell-fc | 53 | 39.25 | 0.18 | 
+| SUPER LIG | TOP 3 BEST PERFORMERS | 1 | goztepe | 42 | 33.56 | 0.94 | 
 
-- 
 
 
 ## Conclusion
