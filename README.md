@@ -51,7 +51,7 @@ The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle
 * `1_squad_capital_efficiency_analysis.sql` - ROI and team efficiency metrics.
 * `2_stadium_fill_rate_analysis.sql` - Attendance impact on win probability.
 * `3_market_outliers_analysis.sql` - Statistical player valuation benchmarking.
-* `4_home_advantage_analysis.sql` - Comparative home/away performance and discipline.
+* `4_home_advantage_analysis.sql` - Comparative home/away performance and referee bias.
 * `5_new_manager_bounce_effect_analysis.sql` - Pre/Post manager change performance tracking.
 
 ---
@@ -93,8 +93,6 @@ This project showcases a wide range of SQL techniques, transitioning from basic 
 * **Self-Join Logic:** Indirectly implemented through Window Functions (`LAG`) to validate "real" manager changes and exclude temporary stand-ins.
 
 ---
-
-
 
 ## 🚦 Getting Started
 
