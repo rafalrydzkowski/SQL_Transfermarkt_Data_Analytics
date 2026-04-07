@@ -17,13 +17,23 @@ The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle
 
 ---
 
-## 🛠 Tech Stack
-* **Language:** SQL (PostgreSQL/Standard SQL)
-* **Key Techniques:**
-    * Common Table Expressions (CTEs) for modular logic.
-    * Advanced Window Functions (`RANK`, `NTILE`, `PERCENT_RANK`, `LAG`).
-    * Statistical Aggregations (`PERCENTILE_CONT` for quartiles and outliers).
-    * Data Cleaning & Normalization (handling NULLs, filtering anomalies).
+## 🔑 Key SQL Concepts Implemented
+
+### 🧠 Advanced Analytics & Window Functions
+* **Ranking & Tiering:** `RANK()` for league efficiency and `ROW_NUMBER()` for time-sensitive valuation matching.
+* **Statistical Bucketing:** `NTILE(5)` used to eliminate team-quality bias by analyzing performance across localized attendance quintiles.
+* **Trend & Change Detection:** `LAG()` with multi-step offset validation to detect manager transitions and filter out temporary stand-ins.
+* **Percentile Distributions:** `PERCENTILE_CONT` and `PERCENT_RANK()` to establish market benchmarks (P5, Q1, Median, Q3, P95) and score individual performance impact.
+
+### 🛠 Data Engineering & Architecture
+* **Modular SQL (CTEs):** Heavily layered Common Table Expressions to transform raw event data into structured analytical layers.
+* **Dynamic Rolling Averages:** `ROWS BETWEEN` frames to calculate 5-game PPG (Points Per Game) momentum shifts.
+* **Defensive Programming:** Implementation of `NULLIF` to prevent zero-division errors in ROI calculations and strict data cleaning for competition-specific anomalies.
+
+### 📈 Business Logic & ROI Metrics
+* **Capital Efficiency (ROI):** Calculated 'Cost per Point' metrics by joining multi-million euro market valuations with league performance stats.
+* **Categorical Performance Modeling:** Created custom business logic using complex `CASE` statements to classify outcomes (e.g., "Success - Significant Bounce" vs "Performance Decline").
+* **Peer Group Benchmarking:** Multi-key joins (League + Position + Age Bucket) to ensure players are only compared to their relevant market peers.
 
 ---
 
@@ -67,27 +77,34 @@ The project utilizes the **Complete Transfermarkt Dataset** sourced from [Kaggle
 * Who are the top 5% market outliers in the 2025 season?
 * In which leagues is the home-field advantage most prominent?
 
-## 🔑 Key SQL Concepts Implemented
-
-### 🧠 Advanced Analytics & Window Functions
-* **Ranking & Tiering:** `RANK()` for league efficiency and `ROW_NUMBER()` for time-sensitive valuation matching.
-* **Statistical Bucketing:** `NTILE(5)` used to eliminate team-quality bias by analyzing performance across localized attendance quintiles.
-* **Trend & Change Detection:** `LAG()` with multi-step offset validation to detect manager transitions and filter out temporary stand-ins.
-* **Percentile Distributions:** `PERCENTILE_CONT` and `PERCENT_RANK()` to establish market benchmarks (P5, Q1, Median, Q3, P95) and score individual performance impact.
-
-### 🛠 Data Engineering & Architecture
-* **Modular SQL (CTEs):** Heavily layered Common Table Expressions to transform raw event data into structured analytical layers.
-* **Dynamic Rolling Averages:** `ROWS BETWEEN` frames to calculate 5-game PPG (Points Per Game) momentum shifts.
-* **Defensive Programming:** Implementation of `NULLIF` to prevent zero-division errors in ROI calculations and strict data cleaning for competition-specific anomalies.
-
-### 📈 Business Logic & ROI Metrics
-* **Capital Efficiency (ROI):** Calculated 'Cost per Point' metrics by joining multi-million euro market valuations with league performance stats.
-* **Categorical Performance Modeling:** Created custom business logic using complex `CASE` statements to classify outcomes (e.g., "Success - Significant Bounce" vs "Performance Decline").
-* **Peer Group Benchmarking:** Multi-key joins (League + Position + Age Bucket) to ensure players are only compared to their relevant market peers.
 ---
 
 ## 🚦 Getting Started
 
+1. **Create Schemas & Database:** Run the script: [0_database_initialization.sql](./scripts/0_database_initialization/0_database_initialization.sql)
+2. **Create Tables:** Run scripts respectively:
+   - [1_bronze_ddl.sql](./scripts/0_database_initialization/1_bronze_ddl.sql)
+   - [2_silver_ddl.sql](./scripts/0_database_initialization/2_silver_ddl.sql)
+   - [3_gold_ddl.sql](./scripts/0_database_initialization/3_gold_ddl.sql)
+4. **Create Stored Procedures:** Run scripts respectively:
+   - [1_bronze_data_load_procedure.sql](./scripts/0_database_initialization/1_bronze_data_load_procedure.sql)
+   - [2_silver_data_load_procedure.sql](./scripts/0_database_initialization/2_silver_data_load_procedure.sql)
+   - [3_gold_data_load_procedure.sql](./scripts/0_database_initialization/3_gold_data_load_procedure.sql)
+5. **Load Raw Data:**
+   ```sql
+   CALL bronze.sp_load_bronze();
+6. **Transform to Silver:**
+   ```sql
+   CALL silver.sp_load_silver();
+7. **Finalize Gold Schema:**
+   ```sql
+   CALL gold.sp_load_gold();
+8. **🎉 Explore my analysis:**
+   - [1_squad_capital_efficiency_analysis](./scripts/1_squad_capital_efficiency)
+   - [2_stadium_fill_rate_analysis](./scripts/2_stadium_fill_rate_analysis)
+   - [3_market_outliers_analysis](./scripts/3_market_outliers_analysis)
+   - [4_home_advantage_analysis](./scripts/4_home_advantage_analysis)
+   - [5_new_manager_bounce_analysis](./scripts/5_new_manager_bounce_analysis)
 
 ---
 
