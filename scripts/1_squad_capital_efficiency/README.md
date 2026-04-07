@@ -1,4 +1,4 @@
-# Transfermarkt Data Analysis SQL Project
+# Squad Capital Efficiency Analysis
 
 ## Analysis Overview
 
