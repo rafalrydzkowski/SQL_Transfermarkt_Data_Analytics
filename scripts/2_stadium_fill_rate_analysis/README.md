@@ -67,7 +67,7 @@ ORDER BY attendance_quintile ASC;
 | **3** | 47.79 | 1.69 | 
 | **4** | 48.04 | 1.70 | 
 | **5** | 47.40 | 1.68 | 
-
+- The highest attendance quintile (Quintile 1) surprisingly shows the lowest win probability (37.35%) and the lowest average points per game (1.36).
 
 ---
 
